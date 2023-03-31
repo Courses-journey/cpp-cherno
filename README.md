@@ -198,3 +198,20 @@ type var_name_01 = 5;
 
 - `References`
   - Define with `&` after type like `bool& var = false;`
+
+# Functions in C++
+
+- Avoid code dupplication
+
+- Has inputs and output
+
+- Take parameters
+
+- `void` to make it return nothing
+
+- Use Functions only to reduce code
+
+- Too many function can affects preformance
+
+- Function declration written in `.h` files
+- Function definiation written in translation unit `.cpp` files
