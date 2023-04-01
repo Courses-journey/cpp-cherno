@@ -433,3 +433,25 @@ do
 ```
 
 - The main difference from `while` that do will execute at least one time no matter what is the condition
+
+# Control Flow in C++ (continue, break, return)
+
+## continue
+
+- can only used in loop
+- Function
+  - Go to next iteration of this loop
+  - Skip the current iteration
+
+## break
+
+- Primarly used in loops and used in switch statement.
+- Function
+  - Get out of the loop | end the loop
+
+## return
+
+- U can say it's the most powerfull
+- Function
+  - Get out of the entire function.
+- Code below it is a dead code
