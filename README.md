@@ -320,3 +320,46 @@ void Log(cont char* msg);
   - For example It know that we have declare variable but we never assign it so it fill it with `cc cc ...` so if u see that u can know directly that the variable haven't assigned yet
   - `cc cc ...` It seems working when running as debug in x68 only
   - every `00` is one byte of data
+
+# CONDITIONS and BRANCHES in C++ (if statements)
+
+- If make programme move from place to antoher in memory depend on condition and start execute commands from that place in memory.
+- If u want a faster code try to avoid them.
+
+```c++
+if()
+{
+  // code
+}else if()
+{
+  // code
+}
+
+// ----- same as -----
+// It just like a shortcut
+
+if ()
+{
+  // code
+}
+else
+{
+	if ()
+	{
+    // code
+	}
+}
+
+```
+
+- We can use `if` with pointers to check that they aren't `null`
+
+```c++
+const char* ptr = "hello";
+
+if(ptr)
+  cout<<"ptr not null"<<"\n";
+else
+  cout<<"ptr is null"<<"\n";
+
+```
