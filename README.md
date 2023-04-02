@@ -598,3 +598,100 @@ int* c = &a;
 
 - Because of endianness the pointer address could be in revesrse order
 - Endianness refers to the order in which bytes are stored in computer memory. There are two main types of endianness: big-endian and little-endian.
+
+# REFERENCES in C++
+
+- Pointers and References are pretty much the same as far what the computer will do with them
+
+## pointers and References
+
+- Semantically they have subtle diffrences
+- Reference is a way to refrence **existing data**
+- With Pointer u could create new pointer variable and set it to `nullptr` or `NULL` OR `0`
+- This cannot done with References as it must refrence existing var
+
+## References
+
+- Reference not a new variable and don't occupy memory
+- U can define one by
+  - write the type of data u want to reference
+  - follow type with ambersand `&`
+  - ```c++
+    int a = 5;
+    int& ref = a;
+    ```
+  - We just now created somthing called alias
+  - the `ref` variable is not really a variable
+  - It just a variable that exsit in our source code not in memory like noraml variables
+  - We can use `ref` as it `a` we can read and write to `ref` directly
+
+## usecases
+
+- If u want for example to pass a variable to function and u want to manipulate this variable directly from function
+
+- In function u can passe
+  - By value
+  - By pointer
+  - By reference
+
+```c++
+#include <iostream>
+
+int increaseByValue(int a)
+{
+	return a++;
+}
+
+int increaseByPointer(int* a)
+{
+	/* The wrong way
+	* As it will increase the address first
+	* and then derefrence it
+	*/
+	// return *a++;
+
+	/* The right way
+	* Derefrence first
+	* then add value
+	*/
+	return (*a)++;
+}
+
+int increaseByRef(int& a)
+{
+	return a++;
+}
+
+int main()
+{
+	int a = 5;
+
+	increaseByValue(a);
+	std::cout << a << "\n"; // 5
+
+	increaseByPointer(&a);
+	std::cout << a << "\n"; // 6
+
+	increaseByRef(a);
+	std::cout << a << "\n"; // 7
+}
+```
+
+## Note
+
+- Any thing u can do with references you can do with pointers
+- Pointers are more powerful and moreuseful in general
+- When u make a reference u cannot change what it references.
+- U can change pointer
+
+  - ```c++
+    int a = 5;
+    int b = 5;
+
+    int* ptr = &a;
+    *ptr = 7; // a = 7
+
+    ptr = &b;
+    *ptr = 8 // b = 8
+
+    ```
