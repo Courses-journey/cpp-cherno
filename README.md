@@ -1327,3 +1327,5 @@ public:
 ```
 
 - c++ dosen't have a keyword called `interface` it just a class with pure virtual function
+- U cannot make instances of base class that have pure virtual functions
+- U cannot make instances of subclass class that extend base class that have pure virtual functions until u impl all pure functions in it
