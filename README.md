@@ -1306,3 +1306,24 @@ std::string* MyString = new std::string("Hello")
 // And if is a pointer you access their properties with -> instead of a dot (.)
 std::cout << MyString->length() << std::endl;
 ```
+
+# Interfaces in C++ (Pure Virtual Functions)
+
+- allow us to define virtual function in our base class that have no implemention and impl it in subcalsses
+- force subcalsses to impl there own impl to that virtual function
+- in programming it's common to have classes that have unimpl method called `interface class`
+  - it's not possible for us to instancetiate this class
+- to make virtual function a pure virtual function
+  - we assign it to 0
+
+```c++
+class Entity
+{
+public:
+	float X, Y;
+  // pure virtual function
+	virtual void GetName() = 0;
+};
+```
+
+- c++ dosen't have a keyword called `interface` it just a class with pure virtual function
