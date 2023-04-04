@@ -1329,3 +1329,26 @@ public:
 - c++ dosen't have a keyword called `interface` it just a class with pure virtual function
 - U cannot make instances of base class that have pure virtual functions
 - U cannot make instances of subclass class that extend base class that have pure virtual functions until u impl all pure functions in it
+
+# Visibility in C++
+
+- Concept that is related to OOP
+- How visible certin members or methods of a class actually are
+- Visible mean who can see them oe call them or use them
+
+## Three basic visiblity modifiers in c++
+
+- private
+- protected
+- public
+
+## private
+
+- mean members can be only access inside class or struct scope
+  - `friend` keyword u can label class or a function as friend and u can access private member
+- default in class | `public` default in struct
+
+## protected
+
+- mean members can be only access inside class or struct scope and subclasses that inherite from this class
+  - `friend` keyword u can label class or a function as friend and u can access private member
