@@ -1418,3 +1418,108 @@ int* list = new int[5];
   - keep tracking size of the array
 - raw array is faster and dangerous
 - standard array are safer
+
+# How Strings Work in C++ (and how to use them)
+
+## char
+
+- char | 1 Byte
+  - cast pointer to a char pointer so you can do pointer arithmetic in term of bytes
+  - allocating memory buffers for example if you want to allocate one kilobyte of memory u can allocate 1024 char
+  - strings and text
+
+## string
+
+- array of char
+- c style
+
+```c++
+const char* name = "Hello";
+```
+
+- despite we use `char*` we don't need to `delete`
+
+  - don't `delete` when u dosen't use `new` keyword
+
+- null termination character
+
+  - to know that string has ended
+  - `0`
+  - `'\0'`
+
+- `''` char
+- `""` char pointer
+
+### standard library
+
+- class called `string`
+- `basic string` template class
+- `std::string` templated version of `basic string` class
+  - templated with char
+  - char is the underline data for each character
+- `wstring` for wide string
+
+```c++
+#include <iostream> // contain definistion for string
+#include <string>  // impl << | and have functions
+```
+
+## string manipulating
+
+- to add string to another
+  - ```c++
+    std::string name = std::string("first") + "second";
+    ```
+  - ```c++
+    std::string name = "first" ;
+    name += "second";
+    ```
+- check if string contain char or word
+
+  - ```c++
+    bool contains = name.find("st") != std::string::npos;
+    ```
+  - `name.find("st")` return position of "st"
+  - `std::string::npos` illegal postion
+
+- [c++ string](https://cplusplus.com/reference/string/string/)
+- when u pass string to function using `printMe(std::string text)` u make a copy of that string
+  - meaning anything u do to string won't affect the original one
+  - less faster
+
+```c++
+void printMe(std::string text)
+{
+  std::cout<<text<<"\n";
+}
+```
+
+- if u want to make the string as readonly pass it using const refrence
+
+```c++
+void printMe(const std::string& text)
+{
+  std::cout<<text<<"\n";
+}
+```
+
+## pointer arithmetic
+
+Pointer arithmetic is a way to perform arithmetic operations on pointers in C++ and other programming languages that support pointers.
+
+Pointer arithmetic allows you to manipulate the memory addresses stored in pointers, which can be useful for traversing arrays, manipulating linked lists, and other operations that involve accessing memory.
+
+Pointer arithmetic in C++ is based on the size of the data type that the pointer is pointing to. When you perform pointer arithmetic, the address stored in the pointer is incremented or decremented by a certain number of bytes, depending on the size of the data type. For example, if you have a pointer to an integer, incrementing the pointer will cause its value to increase by the size of an integer (typically 4 bytes on most systems).
+
+Here's an example of how pointer arithmetic can be used to access elements of an array:
+
+```c++
+int arr[] = {1, 2, 3, 4, 5};
+int *p = arr; // p points to the first element of arr
+
+for(int i = 0; i < 5; i++) {
+    cout << *p << " "; // print the value pointed to by p
+    p++; // increment p to point to the next element of arr
+}
+
+```
