@@ -47,7 +47,7 @@ with codecs.open(os.path.join(dir_path, "README.md"), "r", encoding="utf-8") as 
                     dir_path, course_folder, output_name)
                 if not os.path.exists(subdir_path):
                     os.makedirs(subdir_path)
-                file_name = f"{output_name}.md"
+                file_name = f"README.md"
                 new_file_path = os.path.join(subdir_path, file_name)
                 with open(new_file_path, "w", encoding="utf-8") as new_file:
                     new_file.write(f"# {title}\n\n{content}")
@@ -69,7 +69,7 @@ with codecs.open(os.path.join(dir_path, "README.md"), "r", encoding="utf-8") as 
     subdir_path = os.path.join(dir_path, course_folder, output_name)
     if not os.path.exists(subdir_path):
         os.makedirs(subdir_path)
-    file_name = f"{output_name}.md"
+    file_name = f"README.md"
     new_file_path = os.path.join(subdir_path, file_name)
     with open(new_file_path, "w", encoding="utf-8") as new_file:
         new_file.write(f"# {title}\n\n{content}")
@@ -92,7 +92,7 @@ The Cherno youtube channel
     content_count = 1
     for link in links:
         output_name = f"{content_count:03}-{to_snake_case(link)}"
-        content_link = f"{repo_url_base}/{course_folder}/{output_name}/{output_name}.md"
+        content_link = f"{repo_url_base}/{course_folder}/{output_name}/README.md"
 
         course_content_file.write(f"## {content_count:03} - {link}\n")
         course_content_file.write(f"* [Notes]({content_link})\n")
