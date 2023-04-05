@@ -1,8 +1,6 @@
-# cpp-cherno
+cpp-cherno | The Cherno youtube channel
 
-The Cherno youtube channel
-
-## [c++ course](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
+- [c++ course](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
 
 # How C++ Works
 
