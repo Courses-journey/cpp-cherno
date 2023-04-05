@@ -22,7 +22,7 @@ dir_path = os.getcwd()
 course_folder = "course"
 
 # specify the repo url base
-repo_url_base = "https://github.com/Courses-journey/cpp-cherno"
+repo_url_base = "https://github.com/Courses-journey/cpp-cherno/blob/main"
 
 # check if the course folder exists, create it if it doesn't
 if not os.path.exists(os.path.join(dir_path, course_folder)):
