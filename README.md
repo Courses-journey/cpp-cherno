@@ -10,7 +10,7 @@ The Cherno youtube channel
 
 - `#include <iostream>`
 
-  - preprossecer statement it means this statement will be processed first before compilation
+  - pre-processor statement it means this statement will be processed first before compilation
   - `include <iostream>` it will look for file called `iostream` and paste it the file u called in
 
 - `<<`
@@ -20,11 +20,11 @@ The Cherno youtube channel
 
 - `int main()`
 
-  - sepcial case it assume it return `0`
+  - special case it assume it return `0`
 
 - `cin.get()`
 
-  - await user press enter before programe end
+  - await user press enter before program end
 
 - **After compilation finish there will be `.obj` file for all `.cpp` files**
 
@@ -65,15 +65,15 @@ void log(const char*);
 
 - Steps
 
-  - All preprocessors statement evaluated first
+  - All pre-processor statement evaluated first
   - tokenizing and parsing
   - Abstract syntax tree
-  - All of the code must be at the end either constatnt data or instruction
+  - All of the code must be at the end either constant data or instruction
 
 - `cpp` files are called translation units
-- cpp dosenot care about files
+- cpp doesn't care about files
 - files have no meaning
-- Not nessecary that num `.cpp` files equal translation units
+- Not necessary that num `.cpp` files equal translation units
   - u may make some `.cpp` files but include all these file in one `.cpp`
 
 ## Pre-processing Statements
@@ -81,7 +81,7 @@ void log(const char*);
 - `include`
   - include look for file u want open it and read all its data and then copy it to file u call it form
 - `define`
-  - take the name follwing it and replace it with whatever follows
+  - take the name following it and replace it with whatever follows
 - `if` `endif`
   - use to include or exclude code based on given condition
 - `ifdef`
@@ -105,7 +105,7 @@ void log(const char*);
 
 ## T
 
-- Declared function won't be compiled or linked utill you call them in your code
+- Declared function won't be compiled or linked until you call them in your code
 - Function definition will compiled and linked even if u never call them as they could be used in another file
 - If u define function by word `static` this mean that function only used in the translation unit u defined into
 
@@ -127,9 +127,9 @@ void log(const char*);
 
 - Data stored in memory either in stack or heap
 
-## Premitives data type
+## Primitives data type
 
-- The only diffrence is the size that type occpuy in memory
+- The only difference is the size that type occupy in memory
 - The size for same type differ depend on the complier u are using
 
 - How to define variables?
@@ -146,7 +146,7 @@ type var_name_01 = 5;
 - 1 Bits can store 2 values `0` or `1`
 - So int can store 2 ^ (4\*8) = `2 ^ 32`
 - int can accept number form `-2^31` to `+2^31` But why?
-- As int store negative and positive numbers so it need some way to store negatve
+- As int store negative and positive numbers so it need some way to store negative
 - To store negative it take one bit from `32bits`
 - If u want to store positive numbers only u can use `unsigned` keyword this mean int now can store double the amount number form `-2^32` to `+2^32`
 
@@ -163,7 +163,7 @@ type var_name_01 = 5;
 | long long | 8 Byte         |
 
 - **To store decimal**
-  - when typing decimal in c++ it considerd as double
+  - when typing decimal in c++ it considered as double
   - We use `f` or `F` to make number as float for example `2.2f`
 
 | Type   | size   |
@@ -201,7 +201,7 @@ type var_name_01 = 5;
 
 # Functions in C++
 
-- Avoid code dupplication
+- Avoid code duplication
 
 - Has inputs and output
 
@@ -211,20 +211,20 @@ type var_name_01 = 5;
 
 - Use Functions only to reduce code
 
-- Too many function can affects preformance
+- Too many function can affects performance
 
-- Function declration written in `.h` files
-- Function definiation written in translation unit `.cpp` files
+- Function declaration written in `.h` files
+- Function definition written in translation unit `.cpp` files
 
 # C++ Header Files
 
 - Used for
 
-  - declare ceratin type of function
+  - declare certain type of function
 
 - When define function in another file c++ won't know that it even exist when compiling the file
 
-  - So we need a common place to make declartion in it.
+  - So we need a common place to make declaration in it.
 
 ## `#pragma once`
 
@@ -261,7 +261,7 @@ void Log(cont char* msg);
 
 ### Note in standard library
 
-- file without extension at the end like `iostram` are c++ STDL
+- file without extension at the end like `iostream` are c++ STDL
 - file with `.h` extension at the end like `stdlib.h` are c STDL
 
 # How to DEBUG C++ in VISUAL STUDIO
@@ -273,7 +273,7 @@ void Log(cont char* msg);
 
 - what Breakpoints mean?
 
-  - It mean a point in our programe at which debugger will break `pause`.
+  - It mean a point in our program at which debugger will break `pause`.
 
 - Make sure u are in debug mode
 
@@ -295,7 +295,7 @@ void Log(cont char* msg);
   - `shift` + `f11`
 
 - Continue
-  - continuse execution of programme
+  - continue execution of programme
   - `f5`
 
 ## Look at memory
@@ -314,8 +314,8 @@ void Log(cont char* msg);
 - Memory
 
   - run code in debug mode
-  - open from DEGUG -> Windows -> Memory -> Memory 1
-  - U can search ceertin var using `&var_name`
+  - open from DEBUG -> Windows -> Memory -> Memory 1
+  - U can search certain var using `&var_name`
   - In debug mode compiler made extra good stuff to make our life easier
   - For example It know that we have declare variable but we never assign it so it fill it with `cc cc ...` so if u see that u can know directly that the variable haven't assigned yet
   - `cc cc ...` It seems working when running as debug in x68 only
@@ -323,7 +323,7 @@ void Log(cont char* msg);
 
 # CONDITIONS and BRANCHES in C++ (if statements)
 
-- If make programme move from place to antoher in memory depend on condition and start execute commands from that place in memory.
+- If make programme move from place to another in memory depend on condition and start execute commands from that place in memory.
 - If u want a faster code try to avoid them.
 
 ```c++
@@ -385,7 +385,7 @@ for(int i = 0; i < 5; i++)
 }
 ```
 
-- `i` dosen't have to be zero and dosen't have to be an integer
+- `i` doesn't have to be zero and doesn't have to be an integer
 - condition
 - `i++` called before next iteration of for loop
 
@@ -445,13 +445,13 @@ do
 
 ## break
 
-- Primarly used in loops and used in switch statement.
+- Primarily used in loops and used in switch statement.
 - Function
   - Get out of the loop | end the loop
 
 ## return
 
-- U can say it's the most powerfull
+- U can say it's the most powerful
 - Function
   - Get out of the entire function.
 - Code below it is a dead code
@@ -477,7 +477,7 @@ do
   - like a long line street in a city each house have an address
   - every house is one byte of memory
 
-- Zero is not a vaild memory address
+- Zero is not a valid memory address
 
   - we can't read or write for memory address of zero
   - if u do that the programme will crash
@@ -485,7 +485,7 @@ do
 
 - When making pointers type is meaningless
 
-- U can get address of any variable by prefix it with ambersand `&`
+- U can get address of any variable by prefix it with ampersand `&`
 
 ```c++
 int a = 5;
@@ -496,10 +496,10 @@ void* c = &a;
   a memory address
 - memory address is just a value it's an integer value
 
-  - its size depend on serveral things
+  - its size depend on several things
   - could be [16bits - 32bits - 64bit] integer
 
-- Types not matter and are meainingless
+- Types not matter and are meaningless
 
 ```c++
 int a = 5;
@@ -543,7 +543,7 @@ int* c = &a;
 
   - Heap | Stack
 
-- to allocate meomery without declaring var
+- to allocate memory without declaring var
 
   - ```c++
     // 8 byte of data
@@ -552,7 +552,7 @@ int* c = &a;
   - Because we used `new` keyword this will store in Heap
   - This will make eight byte of memory and get a pointer to the begging of that block
 
-- `memset()` fill the memory with data we specfied
+- `memset()` fill the memory with data we specified
 
   - take a pointer
   - take a value
@@ -569,7 +569,7 @@ int* c = &a;
   - To delete we can use `delete`
   - `char* buffer` as the data is an array
     - we will use `[]` array operator
-    - then type the namr of it
+    - then type the name of it
   - ```c++
     // 8 byte of data
     char* buffer = new char[8];
@@ -578,7 +578,7 @@ int* c = &a;
     delete[] buffer;
     ```
 
-- pointers the selve are just a variable
+- pointers themselves are just a variable
 
   - and are also stored in memory
   - so we can have a pointer to a pointer and u can go deeper with that
@@ -596,7 +596,7 @@ int* c = &a;
 
   - pointers are 4bytes in memory.
 
-- Because of endianness the pointer address could be in revesrse order
+- Because of endianness the pointer address could be in reverse order
 - Endianness refers to the order in which bytes are stored in computer memory. There are two main types of endianness: big-endian and little-endian.
 
 # REFERENCES in C++
@@ -605,27 +605,27 @@ int* c = &a;
 
 ## pointers and References
 
-- Semantically they have subtle diffrences
-- Reference is a way to refrence **existing data**
+- Semantically they have subtle differences
+- Reference is a way to reference **existing data**
 - With Pointer u could create new pointer variable and set it to `nullptr` or `NULL` OR `0`
-- This cannot done with References as it must refrence existing var
+- This cannot done with References as it must reference existing var
 
 ## References
 
 - Reference not a new variable and don't occupy memory
 - U can define one by
   - write the type of data u want to reference
-  - follow type with ambersand `&`
+  - follow type with ampersand `&`
   - ```c++
     int a = 5;
     int& ref = a;
     ```
-  - We just now created somthing called alias
+  - We just now created something called alias
   - the `ref` variable is not really a variable
-  - It just a variable that exsit in our source code not in memory like noraml variables
+  - It just a variable that exist in our source code not in memory like normal variables
   - We can use `ref` as it `a` we can read and write to `ref` directly
 
-## usecases
+## use cases
 
 - If u want for example to pass a variable to function and u want to manipulate this variable directly from function
 
@@ -646,12 +646,12 @@ int increaseByPointer(int* a)
 {
 	/* The wrong way
 	* As it will increase the address first
-	* and then derefrence it
+	* and then dereference it
 	*/
 	// return *a++;
 
 	/* The right way
-	* Derefrence first
+	* Dereference first
 	* then add value
 	*/
 	return (*a)++;
@@ -680,7 +680,7 @@ int main()
 ## Note
 
 - Any thing u can do with references you can do with pointers
-- Pointers are more powerful and moreuseful in general
+- Pointers are more powerful and more useful in general
 - When u make a reference u cannot change what it references.
 - U can change pointer
 
@@ -718,7 +718,7 @@ player.speed = 50;  // error as it private
 ```
 
 - By default class make everything private
-- To make it public to access we have to sepecify that by `public:`
+- To make it public to access we have to specify that by `public:`
 
 ```c++
 class Player
@@ -729,7 +729,7 @@ class Player
 };
 ```
 
-- To write a function we could define it separtely outside the class like
+- To write a function we could define it separately outside the class like
 
 ```c++
 class Player
@@ -830,48 +830,45 @@ int main(){
 
   - it all just about manipulating vec data
 
-- Use classes with inhertance
+- Use classes with inheritance
 - Some compilers will give u warnings in case
 
   - u have class A and struct B.
-  - struct B inhert from class A.
+  - struct B inherit from class A.
   - it just warnings and code will work.
   - some compilers won't show these error.
 
-- If u want something filloff functionlity go with class
+- If u want something fill of functionality go with class
 - U can use struct whenever u use class
 
 ## some comments on video
 
-```
-Reydriel | 10 months ago (edited)
+- **Reydriel | 10 months ago (edited)**
+  <br>
+  To elaborate more on what Cherno says in this video,
+  <br>
+  structs are a legacy feature from C which can group together variables into a user-defined type,
+  <br>
+  BUT CANNOT contain functions
+  (because C did not have OOP features such as methods).
+  <br>
+  This is why it's common in C++ to use structs for "classes with no methods", because that was how they were used in C.
 
-To elaborate more on what Cherno says in this video,
+- **It Cracks! | 5 years ago (edited)**
+  <br>
+  The C++ Core Guidelines C.2 states:
+  "Use class if the class has an invariant;
+  use struct if the data members can vary independently."
+  <br>
+  So if you don't have any preexisting style, your best bet is to stick to that.
 
-structs are a legacy feature from C which can group together variables into a user-defined type,
-
-BUT CANNOT contain functions
-(because C did not have OOP features such as methods).
-
-This is why it's common in C++ to use structs for "classes with no methods", because that was how they were used in C.
-```
-
-```
-It Cracks! | 5 years ago (edited)
-
-The C++ Core Guidelines C.2 states:
-"Use class if the class has an invariant;
-use struct if the data members can vary independently."
-
-So if you don't have any preexisting style, your best bet is to stick to that.
-```
-
-```
-Matthijs van Duin | 2 years ago
-The difference in default access also applies to inheritance:
-struct Foo : Bar  // Bar is a public base class of Foo
-class Foo : Bar  // Bar is a private base class of Foo
-```
+- **Matthijs van Duin | 2 years ago**
+  <br>
+  The difference in default access also applies to inheritance:
+  <br>
+  struct Foo : Bar // Bar is a public base class of Foo
+  <br>
+  class Foo : Bar // Bar is a private base class of Foo
 
 # How to Write a C++ Class
 
@@ -903,7 +900,7 @@ class Foo
 
 - static out of struct or class
 
-  - means that the linkage of that symbol that you declared to be static is going to be internal meaning it's going to be visible only to that transaltion unit you've defined it in
+  - means that the linkage of that symbol that you declared to be static is going to be internal meaning it's going to be visible only to that translation unit you've defined it in
 
 - static Inside of struct or class
   - means that variable is actually going to share memory with all of the instances of the class
@@ -911,10 +908,10 @@ class Foo
 
 ## static out of struct or class
 
-- U cannot have global variable with same name in diffrent files
+- U cannot have global variable with same name in different files
 
   - u can make them static `means that they will be private in that file`
-  - u can refrenec one of them using `extern` keyword
+  - u can reference one of them using `extern` keyword
     ```c++
     extern int b;
     ```
@@ -979,7 +976,7 @@ int Entity::y;
 - Enums is a shortcut for enumeration and basically all it is a set of values
 - Give a name to value
 - Define set of values
-- Limit which value assgin to what
+- Limit which value assign to what
 - A way to name values
 - It just an integer
 - By default it a zero based index
@@ -990,11 +987,11 @@ int Entity::y;
 - By default enums is 32bit integer and u can change that
   - it must be integer
 - There is an enum class
-- U can acess by `::` example `EnumName::Info`
+- U can access by `::` example `EnumName::Info`
   - or directly using `Info`
 
 ```c++
-// eaxmple
+// example
 const int A = 0;
 const int B = 1;
 const int C = 2;
@@ -1029,8 +1026,8 @@ int main()
 
 # Constructors in C++
 
-- Sepecial type of method which run every time when we instantiate an object
-- dosen't have return type
+- Special type of method which run every time when we instantiate an object
+- doesn't have return type
 - it's name must match the of the class
 - there is always a default constructor
 
@@ -1093,8 +1090,8 @@ Entity e1(10.f,20.f); // Entity(float x,float y)
 
 - run when u destroy an object
 - In Constructors u can initialize any variable or any thing u want
-- In Destructors u uninitialize any variable or clean any memory that u've used
-- Applies to both stack and heap allocated objectsv
+- In Destructors u uninitialized any variable or clean any memory that you've used
+- Applies to both stack and heap allocated objects
 - to make one create a method with object name and prefix it with Tilde `~`
 
   - ```c++
@@ -1125,7 +1122,7 @@ Entity e1(10.f,20.f); // Entity(float x,float y)
 
 - Base class that have common functionality
   - Branch it and add more to it
-- Avoid code dupplication
+- Avoid code duplication
 - A way to extend existing class and new functionality to it
 
 ```c++
@@ -1147,7 +1144,7 @@ public :
 
 - Virtual Functions allow us to override methods in subclasses
 - U can define same functions name and parameters in base and subclass
-  - it will work as expected until u assign subclass instatnce to base pointer
+  - it will work as expected until u assign subclass instance to base pointer
   - when u do that the function in base will be called not the one in base
   - Here come virtual functions
 
@@ -1171,7 +1168,7 @@ public :
 };
 ```
 
-- Noraml instance
+- Normal instance
 
 ```c++
   Entity e;
@@ -1218,7 +1215,7 @@ public :
   - it's not required but make code more readable
   - Reduce bugs
     - wrong writing method name in subclass for example
-    - ovveride non virtual method
+    - override non virtual method
 
 ```c++
 class Entity
@@ -1244,8 +1241,8 @@ public :
   - two runtime costs
     - additional memory required to store vtable
     - every time we call function we go to that table to know which function to actually map to.
-    - `cherno` use them alltime
-      - May considred not use them in **embedded systems** which have terriable preformance and every cpu slice account
+    - `cherno` use them all-time
+      - May considered not use them in **embedded systems** which have terrible performance and every cpu slice account
 
 ## vtable
 
@@ -1257,7 +1254,7 @@ public :
 
 - While virtual functions have some performance overhead compared to non-virtual functions, they allow for more flexible and extensible code.
 
-## Notes | Diffrence between `.` and `->`
+## Notes | Difference between `.` and `->`
 
 - In C++, the dot operator (.) is used to access
 
@@ -1309,10 +1306,10 @@ std::cout << MyString->length() << std::endl;
 
 # Interfaces in C++ (Pure Virtual Functions)
 
-- allow us to define virtual function in our base class that have no implemention and impl it in subcalsses
-- force subcalsses to impl there own impl to that virtual function
-- in programming it's common to have classes that have unimpl method called `interface class`
-  - it's not possible for us to instancetiate this class
+- allow us to define virtual function in our base class that have no implementation and impl it in subclasses
+- force subclasses to impl there own impl to that virtual function
+- in programming it's common to have classes that have unimplemented method called `interface class`
+  - it's not possible for us to instantiate this class
 - to make virtual function a pure virtual function
   - we assign it to 0
 
@@ -1326,17 +1323,17 @@ public:
 };
 ```
 
-- c++ dosen't have a keyword called `interface` it just a class with pure virtual function
+- c++ doesn't have a keyword called `interface` it just a class with pure virtual function
 - U cannot make instances of base class that have pure virtual functions
 - U cannot make instances of subclass class that extend base class that have pure virtual functions until u impl all pure functions in it
 
 # Visibility in C++
 
 - Concept that is related to OOP
-- How visible certin members or methods of a class actually are
+- How visible certain members or methods of a class actually are
 - Visible mean who can see them oe call them or use them
 
-## Three basic visiblity modifiers in c++
+## Three basic visibility modifiers in c++
 
 - private
 - protected
@@ -1350,7 +1347,7 @@ public:
 
 ## protected
 
-- mean members can be only access inside class or struct scope and subclasses that inherite from this class
+- mean members can be only access inside class or struct scope and subclasses that inherits from this class
 
   - `friend` keyword u can label class or a function as friend and u can access private member
 
@@ -1370,7 +1367,7 @@ type array_name[array_size];
 array_name[index] = value;
 ```
 
-- If u print `array_name` it self it will give u the meomory address
+- If u print `array_name` it self it will give u the memory address
 
   - as it actually a pointer type
 
@@ -1381,8 +1378,8 @@ array_name[index] = value;
 - array store data contiguously store data in a row
 
 - again array is just an integer pointer
-  - access array by index is just offeset the pointer by this value
-  - the number u add to offest is depend on array type
+  - access array by index is just offset the pointer by this value
+  - the number u add to offset is depend on array type
   - for the array of int example when offset by 2 and when the int is 4 byte `2*4`
   - u can directly deal with bytes by some casting
 
@@ -1398,7 +1395,7 @@ int* ptr = list;
 *  u must cast it to a data type with 1 byte size like [char]
 *  now u must modify offset to be 8
 *
-*  Then as u want to assgin value 3 which is integer
+*  Then as u want to assign value 3 which is integer
 *  u must cast pointer again to an integer pointer
 */
 *(int*)((char*)ptr + 8) = 3;
@@ -1439,7 +1436,7 @@ const char* name = "Hello";
 
 - despite we use `char*` we don't need to `delete`
 
-  - don't `delete` when u dosen't use `new` keyword
+  - don't `delete` when u doesn't use `new` keyword
 
 - null termination character
 
@@ -1460,7 +1457,7 @@ const char* name = "Hello";
 - `wstring` for wide string
 
 ```c++
-#include <iostream> // contain definistion for string
+#include <iostream> // contain definition for string
 #include <string>  // impl << | and have functions
 ```
 
@@ -1480,7 +1477,7 @@ const char* name = "Hello";
     bool contains = name.find("st") != std::string::npos;
     ```
   - `name.find("st")` return position of "st"
-  - `std::string::npos` illegal postion
+  - `std::string::npos` illegal position
 
 - [c++ string](https://cplusplus.com/reference/string/string/)
 - when u pass string to function using `printMe(std::string text)` u make a copy of that string
@@ -1494,7 +1491,7 @@ void printMe(std::string text)
 }
 ```
 
-- if u want to make the string as readonly pass it using const refrence
+- if u want to make the string as readonly pass it using const reference
 
 ```c++
 void printMe(const std::string& text)
@@ -1524,7 +1521,7 @@ for(int i = 0; i < 5; i++) {
 
 ```
 
-## comments on vides
+## comments on video
 
 - Василь Зорич | 4 years ago (edited)
   <br>
@@ -1572,7 +1569,7 @@ Thanks
 
 # String Literals in C++
 
-- A series of characheters in between two double quotes
+- A series of characters in between two double quotes
 
 ```c++
 "string"; // const char* | length 7 because of null termination
@@ -1590,9 +1587,9 @@ const char* txt02 = u8"string";
 ## from c++ 11 and above
 
 ```c++
-const wchar_t* txt03 = L"string";  // 2 btye per  | differ depend on compiler
-const char16_t* txt04 = u"string"; // 2 btye per char | utf16
-const char32_t* txt05 = U"string"; // 4 btye per char | utf32
+const wchar_t* txt03 = L"string";  // 2 byte per  | differ depend on compiler
+const char16_t* txt04 = u"string"; // 2 byte per char | utf16
+const char32_t* txt05 = U"string"; // 4 byte per char | utf32
 ```
 
 ## from c++ 14
