@@ -3324,3 +3324,71 @@ Array<5> arr;
   - material system for rendering graphics
 
 # Stack vs Heap Memory in C++
+
+- stack has predefined size usually 2mb
+- heap also kind have a predefined value but can grow and change as application go
+- Both stack and heap are in ram
+- the difference is how they allocate that memory
+
+```c++
+// Stack
+int val = 5;
+
+// Heap
+int* hVal = new int;
+*hVal = 5;
+```
+
+```c++
+// Stack
+int array[5];
+array[0] = 1;
+array[1] = 1;
+array[2] = 1;
+array[3] = 1;
+array[4] = 1;
+
+// Heap
+int* hArray = new int[5];
+hArray[0] = 1;
+hArray[1] = 1;
+hArray[2] = 1;
+hArray[3] = 1;
+hArray[4] = 1;
+```
+
+```c++
+struct Vector3
+{
+  float x, y, z;
+
+  Vector3()
+      : x(10), y(11), z(12) {}
+}
+
+// Stack
+Vector3 vec3;
+
+// Heap
+Vector3* hVec3 = new Vector3();
+```
+
+- with stack we stack values on each other in memory
+  - one cpu instruction
+  - move stack backwards with bytes and return pointer to the beginning of that location
+  - in stack variable next to each others
+- if u use smart pointers it will call `new` for you
+- don't forget to call delete for heap allocated variables
+  - smart pointers do that for you
+- allocation on heap is a cost while stack is one cpu instruction
+- allocate on stack as u can
+
+[For more | Youtube video](https://www.youtube.com/watch?v=wJ1L2nSIV1s&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=54)
+
+## comment
+
+- The Cherno | 5 years ago
+  <br>
+  Hope you guys enjoyed the video! A few notes:
+  - to be clear, each program/process on our computer has its own stack/heap
+  - each thread will create its own stack when it gets created, whereas the heap is shared amongst all threads
