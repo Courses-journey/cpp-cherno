@@ -2,6 +2,14 @@ cpp-cherno | The Cherno youtube channel
 
 - [c++ course](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
 
+# Welcome to C++
+
+# How to Setup C++ on Windows
+
+# How to Setup C++ on Mac
+
+# How to Setup C++ on Linux
+
 # How C++ Works
 
 ## Some
@@ -3314,3 +3322,5 @@ Array<5> arr;
 - for example
   - logging system
   - material system for rendering graphics
+
+# Stack vs Heap Memory in C++
