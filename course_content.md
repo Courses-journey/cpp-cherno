@@ -77,3 +77,29 @@ The Cherno youtube channel
 * [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/035-implicit_conversion_and_the_explicit_keyword_in_c++)
 ## 036 - OPERATORS and OPERATOR OVERLOADING in C++
 * [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/036-operators_and_operator_overloading_in_c++)
+## 037 - The "this" keyword in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/037-the__this__keyword_in_c++)
+## 038 - Object Lifetime in C++ (Stack/Scope Lifetimes)
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/038-object_lifetime_in_c++__stack_scope_lifetimes_)
+## 039 - SMART POINTERS in C++ (std::unique_ptr, std::shared_ptr, std::weak_ptr)
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/039-smart_pointers_in_c++__std__unique_ptr__std__shared_ptr__std__weak_ptr_)
+## 040 - Copying and Copy Constructors in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/040-copying_and_copy_constructors_in_c++)
+## 041 - The Arrow Operator in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/041-the_arrow_operator_in_c++)
+## 042 - Dynamic Arrays in C++ (std::vector)
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/042-dynamic_arrays_in_c++__std__vector_)
+## 043 - Optimizing the usage of std::vector in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/043-optimizing_the_usage_of_std__vector_in_c++)
+## 044 - Local Static in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/044-local_static_in_c++)
+## 045 - Using Libraries in C++ (Static Linking)
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/045-using_libraries_in_c++__static_linking_)
+## 046 - Using Dynamic Libraries in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/046-using_dynamic_libraries_in_c++)
+## 047 - Making and Working with Libraries in C++ (Multiple Projects in Visual Studio)
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/047-making_and_working_with_libraries_in_c++__multiple_projects_in_visual_studio_)
+## 048 - How to Deal with Multiple Return Values in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/048-how_to_deal_with_multiple_return_values_in_c++)
+## 049 - Templates in C++
+* [Notes](https://github.com/Courses-journey/cpp-cherno/blob/main/course/049-templates_in_c++)

@@ -179,3 +179,4 @@ std::ostream& operator<< (std::ostream& stream, const Vector2& other)
 ## Note
 
 - `this` keyword is a pointer for the class
+

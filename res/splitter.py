@@ -92,7 +92,8 @@ The Cherno youtube channel
     content_count = 1
     for link in links:
         output_name = f"{content_count:03}-{to_snake_case(link)}"
-        content_link = f"{repo_url_base}/{course_folder}/{output_name}/README.md"
+        content_link = f"{repo_url_base}/{course_folder}/{output_name}"
+        # content_link = f"{repo_url_base}/{course_folder}/{output_name}/README.md"
 
         course_content_file.write(f"## {content_count:03} - {link}\n")
         course_content_file.write(f"* [Notes]({content_link})\n")
