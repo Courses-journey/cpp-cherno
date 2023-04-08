@@ -3932,3 +3932,25 @@ namespace first::second {
 - Katleho Komeke | 4 years ago
 
   The `::` is called the scope resolution operator.
+
+# Threads in C++
+
+- CPUs now a days have multi core
+- we can do operations in parallel
+- first include `thread`
+
+```c++
+#include <thread>
+```
+
+```c++
+std::thread worker(/*function pointer*/);
+```
+
+u can wait the thread to finish using `join`
+
+```c++
+worker.join();
+```
+
+- [watch video for more](https://www.youtube.com/watch?v=wXBcwHwIt_I&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=62)
