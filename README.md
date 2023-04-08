@@ -3827,3 +3827,30 @@ int main()
   func();
 }
 ```
+
+# Why I don't "using namespace std"
+
+- avoid using `using namespace` with standard library as u can
+- u can use it with long name namespace
+- u can use `using namespace` inside scope instead of the header if your `.cpp` files
+
+  - so if u want to use namespace in certain scope just make it in this scope
+
+- `Comments`
+  - You don't have to bring the entire std namespace. I mostly use:
+
+```c++
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main() {
+  int number = 10;
+  cout << "The value of number is: " << number << endl;
+  cout << "Hello, world!" << endl;
+  return 0;
+}
+```
+
+## Don't ever never use `using namespace` in header files
