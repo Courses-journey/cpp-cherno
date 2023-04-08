@@ -3768,3 +3768,62 @@ int main()
 ```
 
 `[]` captcha method which how we pass variable from outside
+
+# Lambdas in C++
+
+- a way to make anonymous
+  - a quick disposable function
+- whenever you have a pointer function u can use lambda function
+
+```c++
+void ForEach (const std::vector<int>& list,  void(*print)(int))
+{
+  for(int val: list)
+    print(val);
+}
+```
+
+```c++
+int main()
+{
+  std::vector<int> values = {1, 2, 3, 4, 5, 6, 7};
+
+  auto lambda  = [](int val){
+      std::cout << val << std::endl;
+    };
+
+  ForEach(values, lambda);
+
+  std::cin.get();
+}
+```
+
+- [cpp reference](https://en.cppreference.com/w/cpp/language/lambda)
+
+## mutable with lambda
+
+- lambda is a little throwaway function u can write and assign to variable quickly
+
+  - `[capture method]` u can pass variables from current scope to lambda from`[]`
+  - `[a]` => passing a by value
+  - `[&a]` => passing a by reference
+  - `[=]` => passing all variables in scope by value
+  - `[&]` => passing all variables in scope by reference
+
+- when passing variables by value u can't change them in lambda
+  - and here come `mutable` keyword `[=]() mutable`
+  - this mean u can now change the variables passing by value
+  - this applied if u want to make it `pass by value` otherwise u can `pass by reference` and u don't need `mutable`
+
+```c++
+int main()
+{
+  int a = 0;
+  auto func = []()
+  {
+    std::cout<< "I'm a lambda"<<"\n";
+  };
+
+  func();
+}
+```
