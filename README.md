@@ -3536,3 +3536,67 @@ MAIN // call it
 // out
 // Allocating 100 bytes in test.cpp at line 8
 ```
+
+# The "auto" keyword in C++
+
+- Make compiler to deduce variable ot return type for you
+
+```c++
+int a = 5;
+auto b = a; // b is an int type
+```
+
+```c++
+std::string val(){
+  return "Value";
+}
+
+auto name = val(); // name is std::string type
+```
+
+- u can use it with long type
+
+```c++
+std::vector<std::string> val(){
+  return "Value";
+}
+
+std::vector<std::string>  name = val(); // name is std::string type
+
+// using auto
+auto  name0 = val(); //
+
+// using using
+using nameVector = std::vector<std::string>;
+nameVector name = val();
+
+// using typedef
+typedef std::vector<std::string> nameVectorT;
+nameVectorT name = val();
+```
+
+- if u use `auto` with reference you must type `&`
+  - if you don't it will make a copy of that variable
+
+```c++
+auto& var = somethingReturnTypeReference();
+auto var0 = somethingReturnTypeReference(); // make copy
+```
+
+- c++14 u can use `auto` with return type in functions
+
+```c++
+auto name()
+{
+  return "name";
+}
+```
+
+c++ 11
+
+```c++
+auto name() -> char*
+{
+  return "name";
+}
+```
