@@ -3854,3 +3854,81 @@ int main() {
 ```
 
 ## Don't ever never use `using namespace` in header files
+
+# Namespaces in C++
+
+- with this u can define same symbols in different namespaces
+  - symbols like classes functions variables ..etc
+- the main purpose is to avoid naming conflicts
+- `::` u can call it a namespace operator
+  - u can access namespaces symbols
+  - also u can access static method in classes using it
+    - u can consider classes as namespace on its own
+- what `using namespace ?` mean?
+  - include every thing from `?` to not to use `?::` every time u use it
+
+```c++
+using namespace ?
+```
+
+- u can define certain method `using ?::method` so u can use `method` without namespace but u must provided it with other methods
+
+```c++
+using ?::method
+method();
+?::other();
+```
+
+- u can make alias for namespace
+
+```c++
+namespace name = ?
+name::method(); // instead of using ?::method();
+```
+
+- u can nest namespaces
+
+```c++
+namespace first {
+  namespace second {
+    void func(){
+
+    }
+  }
+}
+```
+
+call nested functions
+
+```c++
+first::second::func();
+```
+
+u can use `using`
+
+```c++
+using namespace first::second;
+```
+
+or u can separate the like that
+
+```c++
+using namespace first;
+using namespace second;
+```
+
+- c++ 17
+
+```c++
+namespace first::second {
+    void func(){
+
+    }
+}
+```
+
+## comments
+
+- Katleho Komeke | 4 years ago
+
+  The `::` is called the scope resolution operator.
