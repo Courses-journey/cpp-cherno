@@ -3392,3 +3392,147 @@ Vector3* hVec3 = new Vector3();
   Hope you guys enjoyed the video! A few notes:
   - to be clear, each program/process on our computer has its own stack/heap
   - each thread will create its own stack when it gets created, whereas the heap is shared amongst all threads
+
+# Macros in C++
+
+- first stage before compiler is the `preprocessor`
+  - any statement with hash `#`
+- and then the code passed to compiler for actual compilation
+
+- the preprocessor stage is basically a text editing stage
+  - we make some macros that replaces text in our code with something else
+  - preform find and replace
+  - can have parameters and arguments not just a basic find and replace
+- `;` semicolon if dose't have statement before it considered it has an empty statement
+
+```c++
+{
+  ; //empty statement
+}
+```
+
+- using params
+
+```c++
+#define LOG(x) std::cout<< x << std::endl
+
+int main()
+{
+  LOG("Hello");
+}
+```
+
+- Logging take time
+- To add preprocessor
+
+  1. open project properties
+  2. go to c++/c
+  3. go to preprocessor
+  4. preprocessor definitions
+  5. for example add `PR_DEBUG` in debug mode or u can do this way `PR_DEBUG=1`
+     - don't make spaces between like that `PR_DEBUG = 1` this is wrong
+
+- u could for example add preprocessor one in debug and one in release
+  - and use that in your code to modify behavior depend on the mode your are in
+
+```c++
+#ifdef PR_DEBUG // valid but not the best
+#define LOG(x) std::cout << x << std::endl
+#else
+#define LOG(x)
+#endif
+
+int main()
+{
+  LOG("Hello"); // debug to console in debug mode only
+}
+```
+
+- recommended
+
+```c++
+#if PR_DEBUG == 1 // recommended
+#define LOG(x) std::cout << x << std::endl
+#else
+#define LOG(x)
+#endif
+
+int main()
+{
+  LOG("Hello"); // debug to console in debug mode only
+}
+```
+
+- u can also use else if
+
+```c++
+#if PR_DEBUG == 1 // recommended
+#define LOG(x) std::cout << x << std::endl
+#elif defined(PR_RELEASE)
+#define LOG(x)
+#endif
+
+int main()
+{
+  LOG("Hello"); // debug to console in debug mode only
+}
+```
+
+- u can also customize `PR_DEBUG` directly from code by using `#define`
+
+```c++
+#define PR_DEBUG 1 // or make it 0
+```
+
+- u can also use `#if` to disable a block of code like this
+
+```c++
+#if 0
+
+// any code u want
+// any code in this scope will be dead
+// :(
+
+#endif
+```
+
+- u can use backslash to multiline macros
+
+```c++
+
+// for example this code
+int main()
+{
+  std::cout << "Hello" << std::endl;
+  std::cin.get();
+}
+
+// u can write like that
+#define MAIN int main()\
+{\
+  std::cout << "Hello" << std::endl;\
+  std::cin.get();\
+}
+
+MAIN // call it
+```
+
+- u can use macro with `new` to get size of allocation in which line and in what file
+
+```c++
+| 01 |  #include <iostream>
+| 02 |
+| 03 |  #define NEW(size) \
+| 04 |      (std::cout << "Allocating " << size << " bytes in " << __FILE__ << " at line " << __LINE__ << "\n", \
+| 05 |      new char[size])
+| 06 |
+| 07 |  int main() {
+| 08 |      char* p = NEW(100);
+| 09 |      return 0;
+| 10 |  }
+```
+
+```c++
+// out
+// Allocating 100 bytes in test.cpp at line 8
+```
