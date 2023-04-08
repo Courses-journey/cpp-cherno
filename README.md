@@ -3665,3 +3665,106 @@ int main() {
 In this code, the square function is declared as constexpr, which means that it can be evaluated at compile time. The y variable is also declared as constexpr, which means that its value is known at compile time. The static_assert statement is used to ensure that the value of y is equal to 25 at compile time.
 
 constexpr is very useful for writing efficient code that can be evaluated at compile-time, which can reduce the time and resources required for program execution.
+
+# Function Pointers in C++
+
+- when use parentheses with function we call this function `func()`
+- but if we call function without parentheses we getting the function pointer`&func`
+- functions are cpu instruction and are stored somewhere
+
+```c++
+void func(){
+  std::cout << "I was called"<< std::endl;
+}
+```
+
+```c++
+int main(){
+  // calling
+  // auto test = func(); // error as the return type is void
+
+  // get function pointer
+  auto test = func;
+
+  test(); // calling it
+  test(); // calling it
+  test(); // calling it
+}
+```
+
+- what the type look like?
+
+```c++
+void(*test)() = func;
+```
+
+- so can either use auto or make an alias for it
+
+```c++
+typedef void(*funcFunction)()
+funcFunction test = func;
+```
+
+- how it works with functions with params?
+
+```c++
+void func(int a){
+  std::cout << "I was called | param is "<< a << std::endl;
+}
+```
+
+```c++
+typedef void(*funcFunction)(int)
+funcFunction test = func;
+
+test(8);
+```
+
+- a real world example may be if u want to pass function to another function
+
+```c++
+void PrintValue(int val)
+{
+  std::cout << val << std::endl;
+}
+
+void ForEach (const std::vector<int>& list,  void(*print)(int))
+{
+  for(int val: list)
+    print(val);
+}
+```
+
+```c++
+int main()
+{
+  std::vector<int> values = {1,2,3,4,5,6,7};
+
+  ForEach(values,PrintValue);
+
+  std::cin.get();
+}
+```
+
+- we can define our function directly with lambda
+
+```c++
+[](params){
+  /*code*/
+}
+```
+
+```c++
+int main()
+{
+  std::vector<int> values = {1,2,3,4,5,6,7};
+
+  ForEach(values, [](int val){
+    std::cout << val << std::endl;
+  });
+
+  std::cin.get();
+}
+```
+
+`[]` captcha method which how we pass variable from outside
