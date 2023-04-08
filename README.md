@@ -3600,3 +3600,68 @@ auto name() -> char*
   return "name";
 }
 ```
+
+# Static Arrays in C++ (std::array)
+
+- static array that won't grow
+
+```c++
+#include <array>
+```
+
+- `std::array<type, size>`
+
+```c++
+std::array<int, 5> data01;
+
+// c style array
+int data02[5];
+```
+
+- u can use std::array with all algorithm in std
+- both array and std::array allocated on stack
+- std::array has a bounds checking optionally
+  - in debug only
+- USE std::array instead c style array
+  - has no cost compared to c style
+  - bounds check
+  - layers of debugging
+
+## comments
+
+- Khatharr Malkavian | 1 year ago
+
+It's worth noting that the size() function is also `constexpr`, so it doesn't actually return 5, but rather the compiler will just replace the function call itself with 5, so something like:
+
+```c++
+int s = ary.size();
+
+// literally becomes
+
+int s = 5;
+
+// with no function call at runtime.
+```
+
+## constexpr
+
+constexpr is a keyword in C++ that was introduced in C++11. It allows the evaluation of expressions at compile-time, rather than run-time.
+
+A constexpr function is a function that can be evaluated at compile time. It is declared using the constexpr keyword in the function signature.
+
+For example, consider the following code:
+
+```c++
+constexpr int square(int x) {
+    return x * x;
+}
+
+int main() {
+    constexpr int y = square(5);
+    static_assert(y == 25, "Incorrect result");
+}
+```
+
+In this code, the square function is declared as constexpr, which means that it can be evaluated at compile time. The y variable is also declared as constexpr, which means that its value is known at compile time. The static_assert statement is used to ensure that the value of y is equal to 25 at compile time.
+
+constexpr is very useful for writing efficient code that can be evaluated at compile-time, which can reduce the time and resources required for program execution.
